@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ZENKAI</title>
-<meta name="description" content="Catálogo en preparación">
+<title>ZENKAI · Catálogo</title>
+<meta name="description" content="Autos a escala, cuadros y streetwear JDM">
 <meta name="theme-color" content="#050505">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ZENKAI">
-<meta property="og:description" content="Catálogo en preparación">
-
+<meta property="og:title" content="ZENKAI · Catálogo">
+<meta property="og:description" content="Autos a escala, cuadros y streetwear JDM">
+<meta property="og:url" content="https://www.zenkaiwear.com.mx/catalogo/">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2064%2064%22%20width%3D%2264%22%20height%3D%2264%22%20aria-hidden%3D%22true%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23f4f4f5%22%2F%3E%3Cpath%20d%3D%22M17%2018h30v6L28%2040h19v6H17v-6l19-16H17z%22%20fill%3D%22%2309090b%22%2F%3E%3C%2Fsvg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +86,15 @@ footer{border-top:1px solid var(--line);padding:28px 0 calc(28px + env(safe-area
 </head>
 <body>
 <header><div class="wrap bar"><a class="brand" href="./index.html"><svg viewBox="0 0 64 64" width="36" height="36" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#f4f4f5"/><path d="M17 18h30v6L28 40h19v6H17v-6l19-16H17z" fill="#09090b"/></svg><b>ZENKAI</b><span class="kanji">全開</span></a></div></header>
-<main class="wrap"><p class="empty">Nuestro catálogo vuelve muy pronto.</p></main>
+<section class="hero"><div class="wrap"><div class="stripe">全開</div><h1>ZENKAI<span>.</span></h1><p>Autos a escala, cuadros y streetwear JDM</p></div></section>
+<div class="tools"><div class="wrap"><input class="search" id="q" type="search" placeholder="Buscar: Skyline, Supra, 1:24, cuadro…" aria-label="Buscar productos" autocomplete="off">
+</div></div>
+<main class="wrap"><div class="grid" id="grid"></div><p class="empty" id="empty">Muy pronto nuevos productos.</p></main>
+<script>
+(()=>{const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],chips=[...document.querySelectorAll('.chip')],empty=document.getElementById('empty');let cat='';
+function apply(){const w=q.value.toLowerCase().split(/\s+/).filter(Boolean);let n=0;for(const c of cards){const ok=(!cat||c.dataset.cat===cat)&&w.every(x=>c.dataset.q.includes(x));c.hidden=!ok;if(ok)n++}if(cards.length)empty.hidden=n>0}
+q.addEventListener('input',apply);chips.forEach(b=>b.addEventListener('click',()=>{cat=b.dataset.c;chips.forEach(x=>x.setAttribute('aria-pressed',x===b));apply()}));})();
+</script>
 <footer><div class="wrap">ZENKAI · Catálogo oficial</div></footer>
 </body>
 </html>
