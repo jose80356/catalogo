@@ -152,6 +152,49 @@ footer h2{font:400 23.4px "Barlow Condensed",sans-serif;text-transform:uppercase
 .wa{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;display:flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:#25d366;color:#fff;font-weight:700;font-size:15px;line-height:1;box-shadow:0 6px 20px rgba(0,0,0,.4)}
 .top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;width:44px;height:44px;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
 .top.on{opacity:1;pointer-events:auto}
+/* Carrito */
+.cartbtn{position:relative;display:grid;place-items:center;width:44px;height:44px;background:none;border:0;cursor:pointer}
+#cartn{position:absolute;top:4px;right:2px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--accent);color:#fff;font:700 11px/18px Barlow,sans-serif;letter-spacing:0;text-align:center}
+.cart{position:fixed;inset:0;z-index:60}
+.cart[hidden]{display:none}
+.shade{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+.drawer{position:absolute;top:0;right:0;bottom:0;width:min(440px,100%);display:flex;flex-direction:column;background:var(--bg);border-left:1px solid var(--line)}
+.dhead{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--hair)}
+.dhead h2{font:400 26px "Barlow Condensed",sans-serif;text-transform:uppercase}
+.dhead button,.x{background:none;border:0;cursor:pointer;width:44px;height:44px;display:grid;place-items:center}
+.dpart{flex:1;display:flex;flex-direction:column;min-height:0}
+.dpart[hidden],.f [hidden]{display:none}
+.dbody{flex:1;overflow-y:auto;padding:8px 20px 20px}
+.dfoot{padding:16px 20px calc(16px + env(safe-area-inset-bottom));border-top:1px solid var(--hair)}
+.dfoot .btn{width:100%}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--hair);font-size:14px;line-height:1.4}
+.line img,.line .noimg{width:72px;height:96px;object-fit:cover;background:var(--card)}
+.line a{font:400 17px/1.2 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.qty{display:inline-flex;align-items:center;margin-top:8px;border:1px solid var(--line)}
+.qty button{width:34px;height:34px;background:none;border:0;cursor:pointer}
+.qty span{min-width:26px;text-align:center}
+.sum{display:flex;justify-content:space-between;font:700 20px "Barlow Condensed",sans-serif;text-transform:uppercase;margin-bottom:6px}
+.note{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px}
+.howto{background:var(--card);border:1px solid var(--line);padding:14px 16px;margin:12px 0 18px;font-size:14px;line-height:1.6}
+.howto h3{font:400 20px "Barlow Condensed",sans-serif;text-transform:uppercase;margin-bottom:6px}
+.howto ol{padding-left:18px}
+.f{display:grid;gap:12px}
+.f label{display:grid;gap:4px;font-size:13px;color:var(--soft)}
+.f input,.f select,.f textarea{width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:16px;outline:none}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--muted)}
+.f fieldset{border:0;padding:0;display:grid;gap:8px}
+.f legend{font:400 18px "Barlow Condensed",sans-serif;text-transform:uppercase;margin-bottom:6px}
+.opt{display:flex!important;grid-template-columns:none;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--line);cursor:pointer;color:var(--fg)!important;font-size:15px!important}
+.opt input{width:auto;min-height:0;accent-color:var(--accent)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.link{background:none;border:0;color:var(--muted);cursor:pointer;padding:12px 0 0;text-decoration:underline}
+.ok{padding:40px 0;text-align:center}
+.ok h3{font:400 30px "Barlow Condensed",sans-serif;text-transform:uppercase;margin-bottom:8px}
+.alt{display:flex;align-items:center;justify-content:center;width:100%;height:45px;margin-top:12px;border:1px solid var(--line);font:400 16px "Barlow Condensed",sans-serif;text-transform:uppercase}
+.alt:hover{border-color:var(--fg)}
+/* Recomendados */
+.recs{padding:20px 0 60px;border-top:1px solid var(--hair)}
+.recs .h2{margin-top:50px}
 @media(prefers-reduced-motion:reduce){.ticker div,.reel div{animation:none}.ph img{transition:none}}
 </style>
 </head>
@@ -190,7 +233,19 @@ Fabricado en metal con llantas de goma
 Puertas laterales funcionales
 Longitud aproximada del auto: 15 cm
 Cada pieza está cuidadosamente armada con el sello de calidad ZENKAI.</p>
-</div></div></div></main>
+</div></div></div>
+<section class="recs"><div class="wrap"><span class="kicker jp">おすすめ</span><h2 class="h2">También te puede gustar</h2><div class="grid"><a class="tile" href="../p/cua-f8acb.html" data-cat="cat-cuadros" data-q="cuadro acura integra cua-f8acb cuadros">
+<div class="ph"><img src="../img/f57dda39c0c0c3a3.jpg" alt="Cuadro Acura Integra" loading="lazy"><span class="badge">AGOTADO</span></div>
+<span class="title">Cuadro Acura Integra</span><span class="price">$500.00</span></a>
+<a class="tile" href="../p/cua-9zmdv.html" data-cat="cat-cuadros" data-q="cuadro chevrolet camaro 1969 cua-9zmdv cuadros">
+<div class="ph"><img src="../img/e6310b2e6c5da708.jpg" alt="Cuadro Chevrolet Camaro 1969" loading="lazy"><span class="badge">AGOTADO</span></div>
+<span class="title">Cuadro Chevrolet Camaro 1969</span><span class="price">$500.00</span></a>
+<a class="tile" href="../p/cua-v9z74.html" data-cat="cat-cuadros" data-q="cuadro chevrolet chevelle ss cua-v9z74 cuadros">
+<div class="ph"><img src="../img/fc8fc5adfb6fa1e3.jpg" alt="Cuadro Chevrolet Chevelle SS" loading="lazy"><span class="badge">AGOTADO</span></div>
+<span class="title">Cuadro Chevrolet Chevelle SS</span><span class="price">$500.00</span></a>
+<a class="tile" href="../p/cua-v434q.html" data-cat="cat-cuadros" data-q="cuadro dodge challenger srt8 cua-v434q cuadros">
+<div class="ph"><img src="../img/0eaa2b3d781dd143.jpg" alt="Cuadro Dodge Challenger SRT8" loading="lazy"><span class="badge">AGOTADO</span></div>
+<span class="title">Cuadro Dodge Challenger SRT8</span><span class="price">$500.00</span></a></div></div></section></main>
 <script>
 (()=>{const big=document.getElementById('big');document.querySelectorAll('.thumbs button').forEach(b=>b.addEventListener('click',()=>{big.src=b.dataset.src;document.querySelectorAll('.thumbs button').forEach(x=>x.setAttribute('aria-current',x===b))}));
 const f=new Intl.DateTimeFormat('es-MX',{day:'numeric',month:'short'}),d=n=>f.format(new Date(Date.now()+n*864e5));
@@ -204,6 +259,7 @@ document.getElementById('share').addEventListener('click',async e=>{const b=e.cu
 <div class="fcol"><h2>Tienda física</h2><p>Swap Meet Siglo 21, pasillo 2, local 627, Tijuana.</p><p>Envíos a todo México con número de guía.</p></div>
 <div class="legal">© 2026, ZenkaiWear</div>
 </div></footer>
+
 
 <button class="top" id="top" aria-label="Volver arriba" onclick="scrollTo({top:0})"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
 <script>(()=>{const t=document.getElementById('top');addEventListener('scroll',()=>t.classList.toggle('on',scrollY>600),{passive:true})})()</script>
