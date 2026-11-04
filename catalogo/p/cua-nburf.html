@@ -60,6 +60,7 @@ header{position:sticky;top:0;z-index:30;background:var(--bg)}
 .copy p{font-size:18px;margin-top:16px;max-width:520px;color:var(--soft)}
 .btn{display:inline-flex;align-items:center;justify-content:center;height:49px;padding:0 32px;background:var(--accent);color:#fff;border:0;font:400 16px/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
 .btn:hover{filter:brightness(.9)}
+.btn[disabled]{opacity:.55;cursor:default;filter:none}
 .copy .btn{margin-top:32px}
 .poster{display:none;flex:none;width:260px;border:6px solid #000;outline:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.6)}
 @media(min-width:990px){.poster{display:block}}
@@ -190,7 +191,7 @@ footer h2{font:400 23.4px "Barlow Condensed",sans-serif;text-transform:uppercase
 .link{background:none;border:0;color:var(--muted);cursor:pointer;padding:12px 0 0;text-decoration:underline}
 .ok{padding:40px 0;text-align:center}
 .ok h3{font:400 30px "Barlow Condensed",sans-serif;text-transform:uppercase;margin-bottom:8px}
-.alt{display:flex;align-items:center;justify-content:center;width:100%;height:45px;margin-top:12px;border:1px solid var(--line);font:400 16px "Barlow Condensed",sans-serif;text-transform:uppercase}
+.alt{background:none;color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;width:100%;height:45px;margin-top:12px;border:1px solid var(--line);font:400 16px "Barlow Condensed",sans-serif;text-transform:uppercase}
 .alt:hover{border-color:var(--fg)}
 /* Recomendados */
 .recs{padding:20px 0 60px;border-top:1px solid var(--hair)}
@@ -219,7 +220,7 @@ footer h2{font:400 23.4px "Barlow Condensed",sans-serif;text-transform:uppercase
 <div class="perks"><p>🙌 Envío Rápido</p><p>💪 Diseños Exclusivos</p><p>🌟 Calidad Garantizada</p></div>
 
 
-<a class="btn" href="https://wa.me/6631096591?text=Hola%20ZENKAI%2C%20me%20interesa%3A%20Cuadro%20Dodge%20Viper%20SRT10%20%5BCUA-NBURF%5D%0Ahttps%3A%2F%2Fwww.zenkaiwear.com.mx%2Fcatalogo%2Fp%2Fcua-nburf.html" target="_blank" rel="noopener">Preguntar si vuelve</a>
+<button class="btn" disabled>AGOTADO</button>
 <button class="share" id="share">Compartir</button>
 
 <p class="desc">⚫ Cuadro Dodge Viper SRT10 – Edición ZENKAI
@@ -295,7 +296,7 @@ function open(){step('s1');draw();cart.hidden=false;document.body.style.overflow
 function close(){cart.hidden=true;document.body.style.overflow=''}
 $('cartbtn').addEventListener('click',open);$('cclose').addEventListener('click',close);cart.querySelector('.shade').addEventListener('click',close);
 addEventListener('keydown',ev=>{if(ev.key==='Escape'&&!cart.hidden)close()});
-document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{const d=b.dataset,max=Math.max(+d.max||1,1);let i=items.find(x=>x.code===d.code);if(i)i.qty=Math.min(max,i.qty+1);else items.push(i={code:d.code,name:d.name,slug:d.slug,img:d.img,cents:d.cents===''?null:+d.cents,qty:1});i.max=max;save();open()}));
+document.querySelectorAll('[data-add]').forEach(b=>b.addEventListener('click',()=>{const d=b.dataset,max=Math.max(+d.max||1,1);let i=items.find(x=>x.code===d.code);if(i)i.qty=Math.min(max,i.qty+1);else items.push(i={code:d.code,name:d.name,slug:d.slug,img:d.img,cents:d.cents===''?null:+d.cents,qty:1});i.max=max;save();open();if('buy' in d){step('cform');f.nombre.focus()}}));
 $('cnext').addEventListener('click',()=>{step('cform');f.nombre.focus()});$('cback').addEventListener('click',()=>step('s1'));
 const sync=()=>{const env=f.entrega.value==='envio';addr.hidden=!env;addr.querySelectorAll('[data-req]').forEach(x=>x.required=env)};
 f.querySelectorAll('[name=entrega]').forEach(x=>x.addEventListener('change',sync));sync();
